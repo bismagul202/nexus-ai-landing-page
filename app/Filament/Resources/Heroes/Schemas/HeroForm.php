@@ -23,8 +23,11 @@ class HeroForm
                     ->url()
                     ->required(),
                 FileUpload::make('background_image')
-                    ->image()
-                    ->required(),
+                ->image()
+                ->imageEditor()
+                ->directory('heroes')
+                ->disk('public')
+                ->required(),
                 Toggle::make('is_active')
                     ->required(),
             ]);

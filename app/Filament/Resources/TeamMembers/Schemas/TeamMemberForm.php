@@ -19,6 +19,9 @@ class TeamMemberForm
                     ->required(),
                 FileUpload::make('image')
                     ->image()
+                    ->imageEditor()
+                    ->directory('team')
+                    ->disk('public')
                     ->required(),
                 TextInput::make('linkedin_url')
                     ->url()

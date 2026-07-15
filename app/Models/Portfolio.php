@@ -6,5 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Portfolio extends Model
 {
-    protected $fillable = ['title', 'category', 'image', 'project_url', 'sort_order', 'is_active'];
-}
+protected $fillable = [
+        'client_name',
+        'client_designation',
+        'client_company',
+        'client_avatar',
+        'review',
+        'rating',
+        'is_active'
+    ];
+
+    }

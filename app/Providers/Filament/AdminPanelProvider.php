@@ -27,46 +27,47 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => '#a3e635', // Vibrant lime/neon accent matching your chart highlights
+                'primary' => Color::Blue,
                 'gray' => Color::Slate,
             ])
-            ->font('Inter') 
+            ->font('Inter')
             ->brandName('Nexus AI Landing Platform')
             ->maxContentWidth('2xl')
             ->sidebarFullyCollapsibleOnDesktop()
-            ->darkMode(true) // Bonus feature integration active!
-            
-            // 🔥 Pure Premium Custom CSS for exact layout transformation
+            ->darkMode(true)
+
             ->renderHook(
                 'filament::styles.end',
                 fn () => new \Illuminate\Support\HtmlString("
                     <style>
-                        /* Strict Style Force Override */
-                        body, html, .fi-layout, .fi-main {
-                            background-color: #eef5f0 !important; /* Content area pastel tint */
-                        }
+                        /* Sidebar Fixed Blue Theme */
                         aside.fi-sidebar, .fi-sidebar-header, .fi-sidebar-nav {
-                            background-color: #0b2211 !important; /* Matte Forest Green Sidebar */
+                            background-color: #1e3a8a !important;
                         }
-                        .fi-sidebar-header span, .fi-sidebar-nav-label, .fi-sidebar-item-label {
-                            color: #e2e8f0 !important;
-                        }
-                        .fi-sidebar-item-icon {
-                            color: #94a3b8 !important;
+                        .fi-sidebar-item-label, .fi-sidebar-item-icon {
+                            color: #ffffff !important;
                         }
                         .fi-sidebar-item-button.fi-active {
-                            background-color: #a3e635 !important;
+                            background-color: #2563eb !important;
                         }
                         .fi-sidebar-item-button.fi-active .fi-sidebar-item-label,
                         .fi-sidebar-item-button.fi-active .fi-sidebar-item-icon {
-                            color: #0b2211 !important;
-                        }
-                        header.fi-topbar {
-                            background-color: #0b2211 !important;
-                            border-bottom: 1px solid #14351d !important;
-                        }
-                        header.fi-topbar * {
                             color: #ffffff !important;
+                        }
+
+                        /* Light Mode: Content Area White */
+                        body, html, .fi-layout, .fi-main {
+                            background-color: #ffffff !important;
+                        }
+
+                        /* Dark Mode: Content Area Dark */
+                        .dark body, .dark .fi-layout, .dark .fi-main {
+                            background-color: #020617 !important;
+                        }
+
+                        /* Ensure Topbar also stays neutral/matching */
+                        header.fi-topbar {
+                            background-color: transparent !important;
                         }
                     </style>
                 ")
@@ -90,7 +91,6 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                \App\Http\Middleware\InjectFilamentCustomStyles::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

@@ -17,9 +17,12 @@ class PortfolioForm
                     ->required(),
                 TextInput::make('category')
                     ->required(),
-                FileUpload::make('image')
-                    ->image()
-                    ->required(),
+                  FileUpload::make('image')
+                ->image()
+                ->imageEditor()
+                ->directory('portfolio')
+                ->disk('public')
+                ->required(),
                 TextInput::make('project_url')
                     ->url()
                     ->default(null),
