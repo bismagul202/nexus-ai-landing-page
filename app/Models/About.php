@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class About extends Model
 {
     protected $fillable = [
-        'title',
-        'description',
-        'image',
-        'is_active', // Jo bhi aapke table columns hain
-    ];
+    'title',
+    'body',
+    'image',
+    'mission',
+    'vision',
+];
 }

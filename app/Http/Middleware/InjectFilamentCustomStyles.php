@@ -14,7 +14,7 @@ class InjectFilamentCustomStyles
 
         if (method_exists($response, 'getContent') && str_contains($response->headers->get('Content-Type') ?? '', 'text/html')) {
             $content = $response->getContent();
-            
+
            $customCss = "
         <style>
             /* Sidebar Background */
@@ -35,7 +35,7 @@ class InjectFilamentCustomStyles
                 background-color: #a3e635 !important;
                 border-radius: 8px !important;
             }
-            
+
             .fi-sidebar-item-button[aria-current='page'] .fi-sidebar-item-label,
             .fi-sidebar-item-button[aria-current='page'] .fi-sidebar-item-icon,
             .fi-sidebar-item-button.fi-active .fi-sidebar-item-label,

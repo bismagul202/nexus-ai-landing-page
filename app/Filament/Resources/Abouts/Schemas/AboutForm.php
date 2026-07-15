@@ -20,6 +20,9 @@ class AboutForm
                     ->columnSpanFull(),
                 FileUpload::make('image')
                     ->image()
+                    ->imageEditor()
+                    ->directory('about')
+                    ->disk('public')
                     ->required(),
                 TextInput::make('mission')
                     ->required(),
