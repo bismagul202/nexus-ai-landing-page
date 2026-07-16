@@ -28,20 +28,20 @@ export default function Team() {
         description="A passionate team dedicated to building seamless AI-driven experiences."
       />
       
-      {/* Grid Layout update: Desktop pe 3 columns, mobile pe 1 */}
+      {/* Grid Layout: Desktop pe 3 columns, mobile pe 1 */}
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-12">
         {teamMembers.map((member: any) => (
           <div 
             key={member.id} 
             className="group relative bg-white p-8 rounded-3xl border border-slate-200 shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2"
           >
-            {/* Stylish Image Container */}
+            {/* Stylish Image Container - FIXED */}
             <div className="relative w-24 h-24 mb-6 mx-auto">
               <img 
-                src={member.image} 
-                alt={member.name} 
-                className="w-full h-full rounded-full object-cover border-4 border-slate-50 group-hover:border-blue-50 transition-colors"
-              />
+                  src={member.image_url} 
+                  alt={member.name} 
+                  className="w-full h-full rounded-full object-cover border-4 border-slate-50 group-hover:border-blue-50 transition-colors"
+                />
               <div className="absolute inset-0 rounded-full ring-1 ring-slate-200 group-hover:ring-blue-500 transition-all"></div>
             </div>
             
