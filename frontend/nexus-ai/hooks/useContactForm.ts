@@ -8,6 +8,7 @@ export function useContactForm() {
   const [values, setValues] = useState<ContactFormInput>({
     fullName: "",
     email: "",
+    phone: "",
     company: "",
     message: "",
   });
@@ -25,7 +26,7 @@ export function useContactForm() {
     try {
       await postContactForm(values);
       setStatus("success");
-      setValues({ fullName: "", email: "", company: "", message: "" });
+      setValues({ fullName: "", email: "", phone: "", company: "", message: "" });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unexpected error");
       setStatus("error");

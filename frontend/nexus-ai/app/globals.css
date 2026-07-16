@@ -6,6 +6,6 @@
 }
 
 html, body {
-  background-color: white;
-  color: #0f172a; /* Slate 900 for high-end readability */
+  background-color: #0a1128;
+  color: #ffffff; /* White text for high contrast on navy */
 }
