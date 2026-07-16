@@ -54,6 +54,7 @@ export interface FAQItem {
 export interface ContactFormInput {
   fullName: string;
   email: string;
+  phone: string;
   company?: string;
   message: string;
 }
